@@ -19,17 +19,17 @@
 
   <style>
     :root{
-      --bg:#fff7f0;            /* açık portakal turuncusu arka plan */
-      --card:#ffffff;          /* kart zemini beyaz */
-      --border:#fbbf24;        /* portakal sınır */
-      --muted:#78350f;         /* kahverengi ton (ikinci yazı) */
-      --text:#111827;          /* ana metin koyu */
-      --accent:#ea580c;        /* koyu turuncu buton */
-      --accent-2:#f97316;      /* canlı turuncu */
-      --ok:#16a34a;            /* yeşil */
-      --no:#dc2626;            /* kırmızı */
+      --bg:#fff7f0;
+      --card:#ffffff;
+      --border:#fbbf24;
+      --muted:#78350f;
+      --text:#111827;
+      --accent:#ea580c;
+      --accent-2:#f97316;
+      --ok:#16a34a;
+      --no:#dc2626;
     }
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;}
     a{color:var(--accent);text-decoration:none}
     a:hover{text-decoration:underline}
     .container{max-width:1100px;margin:0 auto;padding:24px}
@@ -40,14 +40,14 @@
     .logo svg{width:38px;height:38px}
     .badge{font-size:12px;color:#78350f;border:1px solid var(--border);padding:2px 8px;border-radius:999px;background:#ffedd5}
     .navlinks a{margin-left:14px;font-weight:600;color:#9a3412}
-    .cta{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:10px 16px;border-radius:10px;border:1px solid transparent}
+    .cta{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:10px 16px;border-radius:10px}
     .cta:hover{filter:brightness(0.95)}
 
     .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:28px 0}
     .hero h1{font-size:clamp(28px,4.2vw,44px);line-height:1.1;margin:0 0 10px;color:#9a3412}
     .hero p{font-size:18px;color:var(--muted);margin:0 0 18px}
 
-    .cards{display:grid;grid-template-columns:repeat(3, 1fr);gap:18px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:0 2px 8px rgba(0,0,0,.05)}
     .card h3{margin:0 0 8px;font-size:16px;color:#9a3412}
     .big{font-size:20px;font-weight:800}
@@ -56,7 +56,7 @@
     .split{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:26px}
     iframe{border:2px solid var(--border);width:100%;height:360px;border-radius:12px}
 
-    table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#fff}
+    table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--border);border-radius:12px;background:#fff}
     th,td{padding:12px;border-bottom:1px solid var(--border);text-align:left}
     th{color:#9a3412;font-weight:700;background:#ffedd5}
     tr:last-child td{border-bottom:none}
@@ -73,57 +73,14 @@
 
     footer{margin-top:40px;padding:24px 0;border-top:2px solid var(--accent-2);color:#78350f;font-size:14px;background:#fff}
     .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-
-    @media (max-width:920px){
-      .hero{grid-template-columns:1fr}
-      .cards{grid-template-columns:1fr}
-      .split{grid-template-columns:1fr}
-      nav .navlinks{display:none}
-    }
   </style>
-
-  <!-- Structured Data (JSON-LD) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "MedicalClinic",
-    "name": "Finike Kum Aile Sağlığı Merkezi (Kum ASM)",
-    "url": "https://kumasm.example/",
-    "image": "https://kumasm.example/og-cover.jpg",
-    "telephone": "+90 242 504 00 10",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Kum Mah. 177. Sok. No:21 (Finike İlçe Sağlık Müdürlüğü Binası Zemin Kat)",
-      "addressLocality": "Finike",
-      "addressRegion": "Antalya",
-      "postalCode": "07740",
-      "addressCountry": "TR"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 36.3073,
-      "longitude": 30.1364
-    },
-    "openingHoursSpecification": [{
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-      "opens": "08:30",
-      "closes": "17:30"
-    }],
-    "areaServed":"Finike Kum ve çevresi"
-  }
-  </script>
 </head>
 <body>
   <header>
     <div class="container">
       <nav>
         <div class="logo">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="2" y="2" width="60" height="60" rx="14" fill="#0f1530" stroke="#2a325e"/>
-            <path d="M18 40c8-2 14-14 14-22 0 8 6 20 14 22v6c-8-2-14-6-14-10 0 4-6 8-14 10v-6Z" fill="#ff7a00"/>
-            <circle cx="46" cy="22" r="4" fill="#29a0c7"/>
-          </svg>
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="60" height="60" rx="14" fill="#0f1530" stroke="#2a325e"/><path d="M18 40c8-2 14-14 14-22 0 8 6 20 14 22v6c-8-2-14-6-14-10 0 4-6 8-14 10v-6Z" fill="#ff7a00"/><circle cx="46" cy="22" r="4" fill="#29a0c7"/></svg>
           <div>
             <strong>Finike Kum Aile Sağlığı Merkezi</strong><br>
             <span class="badge">Kum ASM • Finike / Antalya</span>
@@ -173,11 +130,8 @@
     <!-- Çalışma Saatleri -->
     <section id="saatler" class="section">
       <h2>Çalışma Saatleri</h2>
-      <p class="muted">Resmî tatil ve idari izin günlerinde kapalıdır. Aşı/pansuman için lütfen mesai saatlerini dikkate alınız.</p>
-      <table aria-describedby="hours-note">
-        <thead>
-          <tr><th>Gün</th><th>Mesai</th><th>Öğle Arası</th></tr>
-        </thead>
+      <table>
+        <thead><tr><th>Gün</th><th>Mesai</th><th>Öğle Arası</th></tr></thead>
         <tbody>
           <tr data-day="1"><td>Pazartesi</td><td>08:30 – 17:30</td><td>12:30 – 13:30</td></tr>
           <tr data-day="2"><td>Salı</td><td>08:30 – 17:30</td><td>12:30 – 13:30</td></tr>
@@ -188,7 +142,7 @@
           <tr data-day="0"><td>Pazar</td><td>Kapalı</td><td>—</td></tr>
         </tbody>
       </table>
-      <p id="hours-note" class="muted">Kanser taramaları, kronik hastalık taramaları ve reçete/rapor süreçleri hakkında bilgi almak için arayınız.</p>
+      <p class="muted">Resmî tatil ve idari izin günlerinde kapalıdır. Aşı/pansuman için mesai saatlerini dikkate alınız.</p>
     </section>
 
     <!-- Konum -->
@@ -196,22 +150,15 @@
       <div>
         <h2>Konum & Yol Tarifi</h2>
         <p class="muted">Finike İlçe Sağlık Müdürlüğü ve Sağlıklı Hayat Merkezi binasında hizmetinizdeyiz.</p>
-        <p><strong>Adres:</strong> Kum Mah. 177. Sok. No:21 07740 Finike/Antalya<br><em>(Finike İlçe Sağlık Müdürlüğü Binası Zemin Kat)</em></p>
-        <p style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="cta" href="https://www.google.com/maps/search/?api=1&query=Finike%20%C4%B0l%C3%A7e%20Sa%C4%9Fl%C4%B1k%20M%C3%BCd%C3%BCrl%C3%BC%C4%9F%C3%BC%20ve%20Sa%C4%9Fl%C4%B1kl%C4%B1%20Hayat%20Merkezi" target="_blank" rel="noopener">Google Haritalar'da Aç</a>
-          <a class="cta" style="background:transparent;color:var(--accent-2);border:1px solid var(--border)" href="https://maps.apple.com/?q=Finike%20%C4%B0l%C3%A7e%20Sa%C4%9Fl%C4%B1k%20M%C3%BCd%C3%BCrl%C3%BC%C4%9F%C3%BC%20ve%20Sa%C4%9Fl%C4%B1kl%C4%B1%20Hayat%20Merkezi" target="_blank" rel="noopener">Apple Haritalar</a>
-        </p>
+        <p><strong>Adres:</strong> Kum Mah. 177. Sok. No:21 07740 Finike/Antalya</p>
       </div>
       <div>
-        <iframe title="Harita (OpenStreetMap)"
+        <iframe title="Harita"
           loading="lazy"
-          style="border:2px solid var(--border);width:100%;height:360px;border-radius:12px"
-          src="https://www.openstreetmap.org/export/embed.html?bbox=30.1264%2C36.3003%2C30.1464%2C36.3143&layer=mapnik&marker=36.3073%2C30.1364">
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Finike%20%C4%B0l%C3%A7e%20Sa%C4%9Fl%C4%B1k%20M%C3%BCd%C3%BCrl%C3%BC%C4%9F%C3%BC%20ve%20Sa%C4%9Fl%C4%B1kl%C4%B1%20Hayat%20Merkezi&output=embed">
         </iframe>
-        <p class="muted" style="margin-top:8px">
-          Harita çalışmazsa 
-          <a href="https://www.openstreetmap.org/?mlat=36.3073&mlon=30.1364#map=17/36.3073/30.1364" target="_blank" rel="noopener">OpenStreetMap’te açın</a>.
-        </p>
       </div>
     </section>
 
@@ -219,7 +166,7 @@
     <section id="hekim" class="section">
       <h2>Hekim & Ekip</h2>
       <div class="card doctor">
-        <div class="avatar" aria-hidden="true">GY</div>
+        <div class="avatar">GY</div>
         <div>
           <strong>Aile Hekimi Dr. Bektaş Görkem Yılmaz</strong>
           <p class="muted" style="margin:6px 0 0">Erişkin ve çocuk muayenesi • Aşı ve izlem hizmetleri • Rapor ve reçete işlemleri</p>
@@ -254,4 +201,33 @@
     <div class="container grid-2">
       <div>
         © <span id="y"></span> Finike Kum Aile Sağlığı Merkezi — Tüm hakları saklıdır.
-        <div class
+      </div>
+      <div style="text-align:right">
+        <a href="#iletisim">İletişim</a> · <a href="#saatler">Saatler</a> · <a href="#konum">Konum</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Bugün açık mı?
+    (function(){
+      const now = new Date();
+      const day = now.getDay();
+      const h = now.getHours(), m = now.getMinutes();
+      const toMin = (hh,mm)=>hh*60+mm;
+      const openMorning=[8,30], closeMorning=[12,30];
+      const openAfternoon=[13,30], closeAfternoon=[17,30];
+      let open=false;
+      if(day>=1 && day<=5){
+        const t=toMin(h,m);
+        open=(t>=toMin(...openMorning)&&t<toMin(...closeMorning))||(t>=toMin(...openAfternoon)&&t<toMin(...closeAfternoon));
+      }
+      const el=document.getElementById('openState');
+      el.textContent=open?'Şu an AÇIK':'Şu an KAPALI';
+      el.className=open?'big open':'big closed';
+    })();
+  </script>
+</body>
+</html>
