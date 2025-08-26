@@ -119,7 +119,6 @@
     <div class="container">
       <nav>
         <div class="logo">
-          <!-- Basit Logo (yerine kendi SVG'nizi koyabilirsiniz) -->
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="2" y="2" width="60" height="60" rx="14" fill="#0f1530" stroke="#2a325e"/>
             <path d="M18 40c8-2 14-14 14-22 0 8 6 20 14 22v6c-8-2-14-6-14-10 0 4-6 8-14 10v-6Z" fill="#ff7a00"/>
@@ -142,6 +141,7 @@
   </header>
 
   <main class="container">
+    <!-- Hero -->
     <section class="hero">
       <div>
         <h1>Finike Kum Aile Sağlığı Merkezi</h1>
@@ -170,6 +170,7 @@
       </div>
     </section>
 
+    <!-- Çalışma Saatleri -->
     <section id="saatler" class="section">
       <h2>Çalışma Saatleri</h2>
       <p class="muted">Resmî tatil ve idari izin günlerinde kapalıdır. Aşı/pansuman için lütfen mesai saatlerini dikkate alınız.</p>
@@ -190,6 +191,7 @@
       <p id="hours-note" class="muted">Kanser taramaları, kronik hastalık taramaları ve reçete/rapor süreçleri hakkında bilgi almak için arayınız.</p>
     </section>
 
+    <!-- Konum -->
     <section id="konum" class="section split">
       <div>
         <h2>Konum & Yol Tarifi</h2>
@@ -201,16 +203,19 @@
         </p>
       </div>
       <div>
-        <iframe title="Harita"
+        <iframe title="Harita (OpenStreetMap)"
           loading="lazy"
-          allowfullscreen
-          referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=Finike%20%C4%B0l%C3%A7e%20Sa%C4%9Fl%C4%B1k%20M%C3%BCd%C3%BCrl%C3%BC%C4%9F%C3%BC%20ve%20Sa%C4%9Fl%C4%B1kl%C4%B1%20Hayat%20Merkezi">
+          style="border:2px solid var(--border);width:100%;height:360px;border-radius:12px"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=30.1264%2C36.3003%2C30.1464%2C36.3143&layer=mapnik&marker=36.3073%2C30.1364">
         </iframe>
-        <p class="muted" style="margin-top:8px">Not: Gömülü harita için bir Google Maps API anahtarı gereklidir. Alternatif olarak yukarıdaki bağlantıları kullanabilirsiniz.</p>
+        <p class="muted" style="margin-top:8px">
+          Harita çalışmazsa 
+          <a href="https://www.openstreetmap.org/?mlat=36.3073&mlon=30.1364#map=17/36.3073/30.1364" target="_blank" rel="noopener">OpenStreetMap’te açın</a>.
+        </p>
       </div>
     </section>
 
+    <!-- Hekim -->
     <section id="hekim" class="section">
       <h2>Hekim & Ekip</h2>
       <div class="card doctor">
@@ -222,6 +227,7 @@
       </div>
     </section>
 
+    <!-- Duyurular & SSS -->
     <section class="section grid-2">
       <div class="card">
         <h3>Duyurular</h3>
@@ -248,43 +254,4 @@
     <div class="container grid-2">
       <div>
         © <span id="y"></span> Finike Kum Aile Sağlığı Merkezi — Tüm hakları saklıdır.
-        <div class="muted">KVKK aydınlatma metni ve çerez politikası için iletişime geçiniz.</div>
-      </div>
-      <div style="text-align:right">
-        <a href="#iletisim">İletişim</a> · <a href="#saatler">Saatler</a> · <a href="#konum">Konum</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // Yılı otomatik yaz
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // Bugün açık mı? 08:30–12:30 / 13:30–17:30
-    (function(){
-      const now = new Date();
-      const day = now.getDay(); // 0..6
-      const h = now.getHours();
-      const m = now.getMinutes();
-      const toMin = (hh,mm)=>hh*60+mm;
-
-      const openMorning = [8,30], closeMorning = [12,30];
-      const openAfternoon = [13,30], closeAfternoon = [17,30];
-
-      const isWeekday = day>=1 && day<=5;
-      let open = false;
-      if(isWeekday){
-        const t = toMin(h,m);
-        open = (t>=toMin(...openMorning) && t<toMin(...closeMorning)) || (t>=toMin(...openAfternoon) && t<toMin(...closeAfternoon));
-      }
-      const el = document.getElementById('openState');
-      el.textContent = open ? 'Şu an AÇIK' : 'Şu an KAPALI';
-      el.className = open ? 'big open' : 'big closed';
-
-      // tablo satırını vurgula (turuncu temaya uygun açık vurgu)
-      const row = document.querySelector(`tr[data-day="${day}"]`);
-      if(row){ row.style.background = '#fff1e6'; }
-    })();
-  </script>
-</body>
-</html>
+        <div class
