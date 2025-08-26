@@ -24,3 +24,253 @@
       --muted:#8ea0c8;
       --text:#eaf2ff;
       --accent:#ff7a00;      /* Finike portakal tonu */
+      --accent-2:#29a0c7;    /* Akdeniz mavisi */
+      --ok:#2ecc71;
+      --no:#ff5a5f;
+    }
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";}
+    a{color:var(--accent-2);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg, rgba(11,16,32,.95), rgba(11,16,32,.6));backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid #1c2345}
+    nav{display:flex;align-items:center;gap:16px;justify-content:space-between;padding:12px 0}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo svg{width:38px;height:38px}
+    .badge{font-size:12px;color:#d4dcff;border:1px solid #2a325e;padding:2px 8px;border-radius:999px}
+    .navlinks a{margin-left:14px;font-weight:600}
+    .cta{display:inline-block;background:var(--accent);color:#000;font-weight:700;padding:10px 16px;border-radius:12px}
+
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:28px 0}
+    .hero h1{font-size:clamp(28px,4.2vw,44px);line-height:1.1;margin:0 0 10px}
+    .hero p{font-size:18px;color:var(--muted);margin:0 0 18px}
+    .cards{display:grid;grid-template-columns:repeat(3, 1fr);gap:18px}
+    .card{background:linear-gradient(180deg, #111631, #0f1530);border:1px solid #202651;border-radius:18px;padding:18px}
+    .card h3{margin:0 0 8px;font-size:16px;color:#cfe3ff}
+    .big{font-size:20px;font-weight:800}
+    .mono{font-variant-numeric:tabular-nums}
+
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:26px}
+    iframe{border:0;width:100%;height:360px;border-radius:16px}
+
+    table{width:100%;border-collapse:collapse;border-radius:14px;overflow:hidden}
+    th,td{padding:10px;border-bottom:1px solid #232a55;text-align:left}
+    th{color:#b9c8ee;font-weight:700;background:#111631}
+    tr:hover td{background:#0e1430}
+    .open{color:var(--ok);font-weight:700}
+    .closed{color:var(--no);font-weight:700}
+
+    .section{margin-top:38px}
+    .section h2{margin:0 0 12px}
+    .muted{color:var(--muted)}
+
+    .doctor{display:flex;gap:16px;align-items:center}
+    .avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(120deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:900;color:#001018}
+
+    footer{margin-top:40px;padding:24px 0;border-top:1px solid #1c2345;color:#9fb0d9;font-size:14px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+
+    @media (max-width:920px){
+      .hero{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr}
+      .split{grid-template-columns:1fr}
+      nav .navlinks{display:none}
+    }
+  </style>
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalClinic",
+    "name": "Finike Kum Aile Sağlığı Merkezi (Kum ASM)",
+    "url": "https://kumasm.example/",
+    "image": "https://kumasm.example/og-cover.jpg",
+    "telephone": "+90 242 504 00 10",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Kum Mah. 177. Sok. No:21 (Finike İlçe Sağlık Müdürlüğü Binası Zemin Kat)",
+      "addressLocality": "Finike",
+      "addressRegion": "Antalya",
+      "postalCode": "07740",
+      "addressCountry": "TR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 36.3073,
+      "longitude": 30.1364
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "08:30",
+      "closes": "17:30"
+    }],
+    "areaServed":"Finike Kum ve çevresi"
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="2" width="60" height="60" rx="14" fill="#0f1530" stroke="#2a325e"/>
+            <path d="M18 40c8-2 14-14 14-22 0 8 6 20 14 22v6c-8-2-14-6-14-10 0 4-6 8-14 10v-6Z" fill="#ff7a00"/>
+            <circle cx="46" cy="22" r="4" fill="#29a0c7"/>
+          </svg>
+          <div>
+            <strong>Finike Kum Aile Sağlığı Merkezi</strong><br>
+            <span class="badge">Kum ASM • Finike / Antalya</span>
+          </div>
+        </div>
+        <div class="navlinks">
+          <a href="#iletisim">İletişim</a>
+          <a href="#saatler">Çalışma Saatleri</a>
+          <a href="#konum">Konum</a>
+          <a href="#hekim">Hekim</a>
+        </div>
+        <a class="cta" href="tel:+902425040010">Hemen Ara</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h1>Finike Kum Aile Sağlığı Merkezi</h1>
+        <p>Adres, telefon, çalışma saatleri ve yol tarifi bilgilerine hızla ulaşın. Kayıt işlemlerinizi <strong>E-Nabız</strong> üzerinden veya doğrudan sağlık ocağına başvurarak yapabilirsiniz.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a class="cta" href="https://enabiz.gov.tr" target="_blank" rel="noopener">E-Nabız'dan Kayıt</a>
+        </div>
+      </div>
+      <div class="cards">
+        <div class="card" id="iletisim">
+          <h3>Telefon</h3>
+          <div class="big mono"><a href="tel:+902425040010">0 (242) 504 00 10</a></div>
+          <div class="muted">Mesai saatleri içinde arayınız.</div>
+        </div>
+        <div class="card">
+          <h3>Adres</h3>
+          <div class="big">Kum Mah. 177. Sok. No:21 <br>(Finike İlçe Sağlık Müdürlüğü Binası Zemin Kat)</div>
+          <div class="muted">07740 Finike / Antalya</div>
+          <p style="margin-top:10px"><a href="#konum">Yol tarifi alın →</a></p>
+        </div>
+        <div class="card">
+          <h3>Durum</h3>
+          <div id="openState" class="big">—</div>
+          <div class="muted">Bugünkü mesaiye göre anlık durum.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Çalışma Saatleri -->
+    <section id="saatler" class="section">
+      <h2>Çalışma Saatleri</h2>
+      <p class="muted">Resmî tatil ve idari izin günlerinde kapalıdır. Aşı/pansuman için lütfen mesai saatlerini dikkate alınız.</p>
+      <table aria-describedby="hours-note">
+        <thead>
+          <tr><th>Gün</th><th>Mesai</th><th>Öğle Arası</th></tr>
+        </thead>
+        <tbody>
+          <tr data-day="1"><td>Pazartesi</td><td>08:30 – 17:30</td><td>12:30 – 13:30</td></tr>
+          <tr data-day="2"><td>Salı</td><td>08:30 – 17:30</td><td>12:30 – 13:30</td></tr>
+          <tr data-day="3"><td>Çarşamba</td><td>08:30 – 17:30</td><td>12:30 – 13:30</td></tr>
+          <tr data-day="4"><td>Perşembe</td><td>08:30 – 17:30</td><td>12:30 – 13:30</td></tr>
+          <tr data-day="5"><td>Cuma</td><td>08:30 – 17:30</td><td>12:30 – 13:30</td></tr>
+          <tr data-day="6"><td>Cumartesi</td><td>Kapalı</td><td>—</td></tr>
+          <tr data-day="0"><td>Pazar</td><td>Kapalı</td><td>—</td></tr>
+        </tbody>
+      </table>
+      <p id="hours-note" class="muted">Gerektiğinde aile hekiminiz mesai dışı danışmanlık verebilir. Reçete/rapor süreçleri hakkında bilgi almak için arayınız.</p>
+    </section>
+
+    <!-- Konum -->
+    <section id="konum" class="section split">
+      <div>
+        <h2>Konum & Yol Tarifi</h2>
+        <p class="muted">Finike İlçe Sağlık Müdürlüğü ve Sağlıklı Hayat Merkezi binasında hizmetinizdeyiz.</p>
+        <p><strong>Adres:</strong> Kum Mah. 177. Sok. No:21 07740 Finike/Antalya<br><em>(Finike İlçe Sağlık Müdürlüğü Binası Zemin Kat)</em></p>
+        <p style="display:flex;gap:10px;flex-wrap:wrap">
+          <a class="cta" href="https://www.google.com/maps/search/?api=1&query=Kum%20Mahallesi%20Finike%20Antalya" target="_blank" rel="noopener">Google Haritalar'da Aç</a>
+          <a class="cta" style="background:transparent;color:var(--accent-2);border:1px solid #2a325e" href="https://maps.apple.com/?q=Kum%20Mahallesi%20Finike%20Antalya" target="_blank" rel="noopener">Apple Haritalar</a>
+        </p>
+      </div>
+      <div>
+        <iframe title="Harita"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed/v1/search?key=YOUR_GOOGLE_MAPS_API_KEY&q=Kum%20Mahallesi%20Finike%20Antalya">
+        </iframe>
+        <p class="muted" style="margin-top:8px">Not: Gömülü harita için bir Google Maps API anahtarı gereklidir. Alternatif olarak yukarıdaki bağlantıları kullanabilirsiniz.</p>
+      </div>
+    </section>
+
+    <!-- Hekim -->
+    <section id="hekim" class="section">
+      <h2>Hekim & Ekip</h2>
+      <div class="card doctor">
+        <div class="avatar" aria-hidden="true">GY</div>
+        <div>
+          <strong>Aile Hekimi Dr. Bektaş Görkem Yılmaz</strong>
+          <p class="muted" style="margin:6px 0 0">Erişkin ve çocuk muayenesi • Aşı ve izlem hizmetleri • Rapor ve reçete işlemleri</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Duyurular & SSS -->
+    <section class="section grid-2">
+      <div class="card">
+        <h3>Duyurular</h3>
+        <ul>
+          <li>Mevsimsel aşılar için lütfen aile hekiminizle iletişime geçiniz.</li>
+          <li>Kan alımı için sabah saatlerinde başvurunuz.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Sık Sorulanlar</h3>
+        <details>
+          <summary>Kayıt nasıl yapılır?</summary>
+          <p>Kayıt işlemlerinizi <a href="https://enabiz.gov.tr" target="_blank" rel="noopener">E-Nabız</a> üzerinden veya doğrudan sağlık ocağına başvurarak yapabilirsiniz.</p>
+        </details>
+        <details>
+          <summary>Hangi saatlerde aşı yapılır?</summary>
+          <p>Aşı işlemleri mesai saatleri içinde yapılır. Aşı öncesi ve sonrası bilgilendirme aile hekiminiz tarafından yapılır.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container grid-2">
+      <div>
+        © <span id="y"></span> Finike Kum Aile Sağlığı Merkezi — Tüm hakları saklıdır.
+        <div class="muted">KVKK aydınlatma metni ve çerez politikası için iletişime geçiniz.</div>
+      </div>
+      <div style="text-align:right">
+        <a href="#iletisim">İletişim</a> · <a href="#saatler">Saatler</a> · <a href="#konum">Konum</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    (function(){
+      const now = new Date();
+      const day = now.getDay();
+      const h = now.getHours();
+      const m = now.getMinutes();
+      const toMin = (hh,mm)=>hh*60+mm;
+      const openMorning = [8,30], closeMorning = [12,30];
+      const openAfternoon = [13,30], closeAfternoon = [17,30];
+      const isWeekday = day>=1 && day<=5;
+      let open = false;
+      if(isWeekday){
+        const t = toMin(h,m);
+        open = (t>=toMin(...openMorning) && t<toMin(...closeMorning)) || (t>=toMin(...openAfternoon) && t<toMin(...closeAfternoon));
+      }
+      const el = document.getElementById('openState');
+      el.textContent = open ? 'Şu an AÇIK' : 'Şu an KAPALI';
+      el.className = open ? 'big open' : 'big closed';
+      const row = document.querySelector(`tr[data-day=\"${day}\"]
